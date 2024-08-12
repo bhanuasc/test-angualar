@@ -14,4 +14,13 @@ export class DataService {
    getAllUsers(){
     return this.myHttpClient.get("api/users")
    }
+
+   getData() : Promise<string>{
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve('hello world...!')
+        }, 2000);
+        })
+
+   }
 }

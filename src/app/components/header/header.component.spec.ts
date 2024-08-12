@@ -22,7 +22,7 @@ describe('HeaderComponent', () => {
     debugElement=fixture.debugElement
   });
 
-  fit('should change background color to yellow on mouse enter',()=>{
+  it('should change background color to yellow on mouse enter',()=>{
     const debugElement = fixture.debugElement.query(By.directive(HighlightDirective))
     const div: HTMLElement = debugElement.nativeElement;
 
@@ -33,7 +33,7 @@ describe('HeaderComponent', () => {
   })
 
 
-  fit('should change background color to yellow on mouse leave',()=>{
+  it('should change background color to yellow on mouse leave',()=>{
     const debugElement = fixture.debugElement.query(By.directive(HighlightDirective))
     const div: HTMLElement = debugElement.nativeElement;
 
@@ -50,28 +50,28 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('should show title',()=>{
+  it('should show title',()=>{
     expect(component.title).toBe("bhanu title");
 
   })
 
-  fit('check title in html',()=>{
+  it('check title in html',()=>{
     fixture.detectChanges()
     var myEle = fixture.nativeElement
     expect(myEle.querySelector('h2').textContent).toContain('bhanu title')
   })
 
-  fit('Check for para tags', () => {
+  it('Check for para tags', () => {
     var paraEle = debugElement.queryAll(By.css('p'))
     expect(paraEle[1].nativeElement.textContent).toBe('bhanu')
     });
 
-    fit('Check for button', () => {
+    it('Check for button', () => {
       var btnele = debugElement.queryAll(By.css('.mybtn'))
       expect(btnele[0].nativeElement.disabled).toBeTrue()
       });
 
-      fit('should have the correct image URL', () => {
+      it('should have the correct image URL', () => {
         const imgElement = fixture.debugElement.query(By.css('.myimg'));
         const src = imgElement.nativeElement.src;
         const expectedUrl = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hyundai.com%2Fin%2Fen&psig=AOvVaw1FmyUt1VW0TJsOLxcsPxx9&ust=1723188238792000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOjqjMnu5IcDFQAAAAAdAAAAABAJ';
@@ -80,34 +80,34 @@ describe('HeaderComponent', () => {
       })
 
 
-      fit("even or odd numbers",()=>{
+      it("even or odd numbers",()=>{
         var res = component.evenodd(10);
         expect(res).toBe("even");
        
      })
 
 
-     fit("even or odd numbers",()=>{
+     it("even or odd numbers",()=>{
       var res = component.evenodd(11);
       expect(res).toBe("odd");
      
    })
 
-   fit('does even odd method called on button',()=>{
+   it('does even odd method called on button',()=>{
     spyOn(component,'evenodd');
     const btnelee = fixture.debugElement.query(By.css(".mybtn3"));
     btnelee.triggerEventHandler('click',null);
     expect(component.evenodd).toHaveBeenCalledWith(10);
    })
 
-   fit('does isSubscribed method called on button',()=>{
+   it('does isSubscribed method called on button',()=>{
     spyOn(component,'subscription');
     const btnelee = fixture.debugElement.query(By.css(".mybtn2"));
     btnelee.triggerEventHandler('click',null);
     expect(component.subscription).toHaveBeenCalled()
    })
 
-  //  fit("should display correct number",()=>{
+  //  it("should display correct number",()=>{
   //   var inputElement = fixture.nativeElement.querySelector('input')
   //   var buttonElement = fixture.nativeElement.querySelector('.mybtn3')
   //   var headerElement = fixture.nativeElement.querySelector('h4')
