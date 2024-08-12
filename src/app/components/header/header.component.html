@@ -1,0 +1,19 @@
+<p>header works!</p>
+<h2>bhanu title</h2>
+<p>bhanu</p>
+
+<div appHighlight>
+    Hover over this to see highlight effect
+</div>
+
+<button class="mybtn" disabled>Submit</button>
+<img class="myimg" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hyundai.com%2Fin%2Fen&psig=AOvVaw1FmyUt1VW0TJsOLxcsPxx9&ust=1723188238792000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOjqjMnu5IcDFQAAAAAdAAAAABAJ">
+
+<button class="mybtn2" (click)="subscription()" [disabled]="isSubscribed">{{btnText}}</button>
+
+<button class="mybtn3" (click)="evenodd(10)">test</button>
+
+<input type="number" [(ngModel)] = 'inputNumber' placeholder="enter a number">
+<button class="mybtn4" (class)="buttonClicked()">Enter</button> <br><br>
+
+<h4>{{rese}}</h4>
